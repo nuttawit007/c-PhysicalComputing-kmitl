@@ -1,18 +1,20 @@
-// #include <stdio.h>
+// วิธี 1
+#include <stdio.h>
 
-// int main() {
-//     char fname1[31], sname1[31], person2[61], person3[61];
-//     scanf("%s", fname1);
-//     scanf("%s\n", sname1);
-//     scanf("%[^\n]\n", person2);
-//     scanf("%[^\n]", person3);
+int main() {
+    char fname1[31], sname1[31], person2[61], person3[61];
+    scanf("%s", fname1);
+    scanf("%s\n", sname1);
+    scanf("%[^\n]\n", person2);
+    scanf("%[^\n]", person3);
 
-//     printf("Person 1: %s %s\n", fname1, sname1);
-//     printf("Person 2: %s\n", person2);
-//     printf("Person 3: %s", person3);
-//     return 0;
-// }
+    printf("Person 1: %s %s\n", fname1, sname1);
+    printf("Person 2: %s\n", person2);
+    printf("Person 3: %s", person3);
+    return 0;
+}
 
+// วิธี 2
 #include<stdio.h>
  
 int main() {
