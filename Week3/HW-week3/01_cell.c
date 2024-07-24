@@ -9,4 +9,6 @@ int main(){
     printf("*%s*\n", txt);
     printf("*-*-*\n");
     printf("*****\n");
+
+    return 0;
 }
