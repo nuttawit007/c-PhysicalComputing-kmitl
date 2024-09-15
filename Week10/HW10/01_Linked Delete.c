@@ -21,10 +21,10 @@ int main() {
     char condition;
     char data[100]; // Assuming a maximum string length of 99 characters
     scanf("%d", &n);
-
+ 
     for (int i = 0; i < n; i++) {
         scanf(" %c: %[^\n]s", &condition, data); // Read condition and string data
-
+ 
         if (condition == 'F') {
             insert_front(mylist, data);
         } else if (condition == 'L') {
@@ -35,7 +35,7 @@ int main() {
             printf("Invalid Condition!\n");
         }
     }
-
+ 
     traverse(mylist);
     // Remember to free allocated memory for each node's data
     DataNode* current = mylist->head;
@@ -59,7 +59,7 @@ SinglyLinkedList* createSinglyLinkedList() {
     SinglyLinkedList* output = (SinglyLinkedList*) malloc(sizeof(SinglyLinkedList));
     output->count = 0;
     output->head = NULL;
-
+ 
     return output;
 }
 void traverse(SinglyLinkedList* list) {
@@ -97,15 +97,14 @@ void insert_front(SinglyLinkedList* list, char* data) {
     }
     list->count++;
 }
-void delete(struct SinglyLinkedList* list, char* data) {
-    struct DataNode* current = list->head;
-    struct DataNode* previous = NULL;
-    if(list->count==0){
+void delete(SinglyLinkedList* list, char* data) {
+    DataNode* current = list->head;
+    DataNode* previous = NULL;
+    if (list->count == 0) {
         printf("Cannot delete, %s does not exist.\n", data);
-        free(current);
         return;
     }
-    while (strcmp(current->data, data) != 0 && current->next != NULL) {
+    while (current != NULL && strcmp(current->data, data) != 0) {
         previous = current;
         current = current->next;
     }
@@ -113,7 +112,7 @@ void delete(struct SinglyLinkedList* list, char* data) {
         printf("Cannot delete, %s does not exist.\n", data);
         return;
     }
-    if (previous == NULL) {
+    if (previous == NULL) { // Deleting the head node
         list->head = current->next;
     } else {
         previous->next = current->next;
