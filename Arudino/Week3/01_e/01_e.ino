@@ -8,7 +8,7 @@ uint32_t frame_off[3] = { 0, 0, 0 };
 uint32_t frame_on[3] = { 0x0E011011, 0x01F01001, 0x800F0000 };
 
 // WiFi credentials
-const char* ssid = "ITFORGE_UFO";  // Your SSID
+const char* ssid = "ITUFO";  // Your SSID
 const char* password = "";         // No password for open networks
 
 // Server details (replace with your target server)
